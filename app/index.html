@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title>First Angular Application</title>
+        <link rel="stylesheet" href="app.css">
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="bower_components/angular-loader/angular-loader.js"></script>
+        <script src="bower_components/angular-mocks/angular-mocks.js"></script>
+        <script src="bower_components/angular-route/angular-route.js"></script>
+        <script src="app.js"></script>
+    </head>
+    <body ng-app="mainApp" ng-controller="todoCtrl">
+        <div class="main">
+            <form class="form-inline" >
+                <div class="form-group" >
+                    <div id="text-box" style="text-align: center">Todo list</div>
+                    <div style="height: 34px;">
+                        <input id="checkbox" type="checkbox" ng-click="updateBox()">
+                        <input type="text" id="abc" class="form-control" ng-model="todo.ac" placeholder="Enter Todo List" autofocus/>
+                        <input type="submit" class="btn btn-default" ng-click="addToDo()"/>
+                    </div>
+                </div>
+
+                <button class="btn btn-primary" ng-click="removeAlls()" style="width: 100px; margin-left: 50px">Clear</button>
+                <button ng-click="filterType='ACTIVE'" class="btn btn-success" style="width: 100px">Active</button>
+                <button ng-click="filterType='COMPLETED'" class="btn btn-info" style="width: 100px">Completed</button>
+                <button ng-click="filterType='ALL'" class="btn btn-warning" style="width: 100px">All</button>
+                <!--<button ng-click="activeItems()" class="btn btn-success" style="width: 100px">Active</button>-->
+                <!--<button ng-click="completedItems()" class="btn btn-info" style="width: 100px">Completed</button>-->
+                <!--<button ng-click="allItems()" class="btn btn-warning" style="width: 100px">All</button>-->
+                <div style="margin-top: 15px;">
+                    <div ng-repeat="item in listTodo | filter : filterStatus" >
+                        <input type="checkbox" ng-model="item.selected" ng-click="countSelected(item)" class="col-md-1"/>
+                        <span ng-class="{strike: item.selected}" class="col-md-6">{{item.ac }}</span>
+                        <span class="col-md-5"><button ng-click="deleteTodo($index)" class="btn btn-primary">Delete</button></span>
+                    </div>
+                    <div>Items left : {{count}}</div>
+                </div>
+
+            </form>
+
+
+        </div>
+
+    <!--Script-->
+    <script>
+
+    </script>
+    </body>
+</html>

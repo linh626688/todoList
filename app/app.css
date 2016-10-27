@@ -1,0 +1,33 @@
+/* app css stylesheet */
+.main{
+    width: 100%;
+    height: 500px;
+}
+
+.form-inline{
+    width: 600px;
+    height: 300px;
+    margin:auto;
+}
+
+.form-group{
+    width: 100%;
+}
+
+.form-inline .form-control{
+    width: 80%;
+}
+
+#text-box{
+    font-size: 30px;
+}
+
+input[type=checkbox]
+{
+    /* Double-sized Checkboxes */
+}
+
+.strike{
+    text-decoration: line-through;
+    opacity: 0.5;
+}
